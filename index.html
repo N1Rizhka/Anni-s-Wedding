@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ani &amp; Zviadi | Wedding Invitation</title>
+  <meta name="description" content="Online wedding invitation for Ani and Zviadi.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background-shapes" aria-hidden="true">
+    <span class="shape shape--one"></span>
+    <span class="shape shape--two"></span>
+    <span class="shape shape--three"></span>
+  </div>
+
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Wedding Invitation</p>
+      <h1>Ani &amp; Zviadi</h1>
+      <p class="subtitle">Bright colors, elegant details, and joyful summer spirit.</p>
+    </header>
+
+    <section class="invite-stage" id="inviteStage">
+      <h2 class="section-title">Open your envelope</h2>
+
+      <div class="envelope-shell">
+        <button class="envelope" id="openEnvelopeBtn" aria-expanded="false" aria-controls="invitationCard">
+          <span class="envelope__back"></span>
+          <span class="envelope__letter-peek">Ani &amp; Zviadi</span>
+          <span class="envelope__front"></span>
+          <span class="envelope__flap"></span>
+          <span class="envelope__seal">Open Invitation</span>
+        </button>
+
+        <article class="invitation-card" id="invitationCard" tabindex="-1">
+          <p class="card-heading">You are warmly invited</p>
+          <h3>Wedding of Ani &amp; Zviadi</h3>
+          <ul class="details-list">
+            <li>
+              <span class="label">Date</span>
+              <span>5 September</span>
+            </li>
+            <li>
+              <span class="label">Time</span>
+              <span>17:00</span>
+            </li>
+            <li>
+              <span class="label">Venue</span>
+              <span>Garden of Ilia</span>
+            </li>
+            <li>
+              <span class="label">Address</span>
+              <span>Davit Aghmashenebeli Avenue, 73, Tbilisi</span>
+            </li>
+            <li>
+              <span class="label">Dress code</span>
+              <span><strong>SUMMER CHIC</strong></span>
+            </li>
+          </ul>
+
+          <p class="countdown" id="countdown">Counting down to your celebration...</p>
+
+          <div class="card-actions">
+            <a class="btn btn--secondary" href="https://maps.google.com/?q=Garden+of+Ilia,+Davit+Aghmashenebeli+Avenue+73,+Tbilisi" target="_blank" rel="noopener noreferrer">View Map</a>
+            <button class="btn btn--primary" id="jumpToRsvpBtn" type="button">RSVP Now</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="rsvp-section" id="rsvpSection">
+      <h2>RSVP</h2>
+      <p>Please confirm your attendance to help us prepare a beautiful evening for everyone.</p>
+
+      <form id="rsvpForm" class="rsvp-form">
+        <label>
+          Full name
+          <input type="text" id="name" name="name" autocomplete="name" placeholder="Your name" required>
+        </label>
+
+        <label>
+          Will you join us?
+          <select id="attendance" name="attendance" required>
+            <option value="">Select one</option>
+            <option value="yes">Joyfully attending</option>
+            <option value="no">With warm regrets</option>
+          </select>
+        </label>
+
+        <label>
+          Number of guests
+          <input type="number" id="guests" name="guests" min="1" max="6" value="1" required>
+        </label>
+
+        <label>
+          Message for the couple (optional)
+          <textarea id="message" name="message" rows="3" placeholder="Share your wishes..."></textarea>
+        </label>
+
+        <button class="btn btn--primary btn--full" type="submit">Send RSVP</button>
+      </form>
+
+      <p class="rsvp-response" id="rsvpResponse" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
