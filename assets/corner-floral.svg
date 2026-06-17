@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- arcing stem from the corner -->
+  <path d="M6 6C40 8 78 26 108 56" stroke="#7fa05b" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+  <path d="M6 6C8 40 26 78 56 108" stroke="#7fa05b" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+  <!-- leaves -->
+  <g fill="#7fa05b">
+    <path d="M30 14c-6 6-9 14-8 22 8-1 15-7 18-16-3-3-7-5-10-6Z" opacity=".9"/>
+    <path d="M14 30c6-6 14-9 22-8-1 8-7 15-16 18-3-3-5-7-6-10Z" opacity=".9"/>
+    <path d="M64 36c-5 4-8 10-7 16 6-1 12-5 14-12-2-2-5-3-7-4Z" opacity=".8"/>
+  </g>
+  <!-- blossoms -->
+  <g transform="translate(10 10)">
+    <circle r="11" fill="#e26d5a"/>
+    <circle r="6" fill="#f3a683"/>
+    <circle r="2.6" fill="#f6c453"/>
+  </g>
+  <g transform="translate(52 30)">
+    <circle r="7" fill="#d98ca7"/>
+    <circle r="3" fill="#f6c453"/>
+  </g>
+  <g transform="translate(30 52)">
+    <circle r="7" fill="#6cb2c4"/>
+    <circle r="3" fill="#f6c453"/>
+  </g>
+  <g transform="translate(88 70)">
+    <circle r="6" fill="#f6c453"/>
+    <circle r="2.6" fill="#e26d5a"/>
+  </g>
+  <g transform="translate(70 88)">
+    <circle r="6" fill="#f3a683"/>
+    <circle r="2.6" fill="#e26d5a"/>
+  </g>
+</svg>
