@@ -4,6 +4,7 @@ const openEnvelopeButton = document.getElementById("openEnvelope");
 const envelope = document.getElementById("envelope");
 const brochure = document.getElementById("brochure");
 const addCalendarButton = document.getElementById("addCalendar");
+const invitationLinks = document.querySelectorAll('a[href="#details"], a[href="#rsvp-panel"]');
 
 const rsvpForm = document.getElementById("rsvpForm");
 const rsvpResult = document.getElementById("rsvpResult");
@@ -15,6 +16,18 @@ const resetRsvpButton = document.getElementById("resetRsvp");
 const openInvitation = () => {
   document.body.classList.add("invitation-open");
   envelope.setAttribute("aria-expanded", "true");
+};
+
+const scrollToTarget = (selector) => {
+  const target = document.querySelector(selector);
+
+  if (!target) {
+    return;
+  }
+
+  window.setTimeout(() => {
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, 220);
 };
 
 const buildRsvpSummary = (formData) => {
@@ -111,19 +124,23 @@ const downloadCalendarInvite = () => {
 
 openEnvelopeButton.addEventListener("click", () => {
   openInvitation();
-  brochure.scrollIntoView({ behavior: "smooth", block: "start" });
+  scrollToTarget("#brochure");
 });
 
 envelope.addEventListener("click", () => {
-  const alreadyOpen = document.body.classList.contains("invitation-open");
   openInvitation();
-
-  if (alreadyOpen) {
-    brochure.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+  scrollToTarget("#brochure");
 });
 
 addCalendarButton.addEventListener("click", downloadCalendarInvite);
+
+invitationLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    openInvitation();
+    scrollToTarget(link.getAttribute("href"));
+  });
+});
 
 rsvpForm.addEventListener("submit", (event) => {
   event.preventDefault();

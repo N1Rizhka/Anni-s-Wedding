@@ -347,9 +347,13 @@ main {
 }
 
 .brochure {
-  opacity: 0.65;
-  transform: translateY(24px);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(24px) scale(0.98);
   transition:
+    max-height 700ms ease,
     opacity 600ms ease,
     transform 600ms ease;
 }
@@ -414,6 +418,19 @@ main {
   grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
   gap: 24px;
   align-items: start;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  border-color: transparent;
+  box-shadow: none;
+  transform: translateY(24px) scale(0.98);
+  transition:
+    max-height 700ms ease,
+    opacity 600ms ease,
+    transform 600ms ease,
+    padding 600ms ease;
 }
 
 .rsvp-card {
@@ -512,6 +529,10 @@ main {
   gap: 12px;
 }
 
+.rsvp-result[hidden] {
+  display: none;
+}
+
 .rsvp-result pre {
   margin: 0;
   white-space: pre-wrap;
@@ -531,8 +552,20 @@ body.invitation-open .envelope-letter {
 }
 
 body.invitation-open .brochure {
+  max-height: 1600px;
   opacity: 1;
-  transform: translateY(0);
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+body.invitation-open .rsvp-panel {
+  max-height: 1200px;
+  padding: clamp(24px, 4vw, 42px);
+  opacity: 1;
+  pointer-events: auto;
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+  transform: translateY(0) scale(1);
 }
 
 @media (max-width: 960px) {
@@ -560,9 +593,16 @@ body.invitation-open .brochure {
   }
 
   .hero,
-  .brochure-card,
+  .brochure-card {
+    border-radius: 24px;
+    padding: 22px;
+  }
+
   .rsvp-panel {
     border-radius: 24px;
+  }
+
+  body.invitation-open .rsvp-panel {
     padding: 22px;
   }
 
