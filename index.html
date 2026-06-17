@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ani &amp; Zviadi | Wedding Invitation</title>
+    <meta
+      name="description"
+      content="Open Ani and Zviadi's online wedding invitation and RSVP for 5 September at Garden of Ilia, Tbilisi."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-rose: #fff3ee;
+        --bg-cream: #fffbf3;
+        --sunset: #f2a66f;
+        --coral: #ea7a67;
+        --gold: #c3923d;
+        --sage: #8ea88c;
+        --sky: #8fb8d8;
+        --ink: #43312b;
+        --muted: #796357;
+        --panel: rgba(255, 251, 243, 0.82);
+        --line: rgba(124, 94, 63, 0.16);
+        --shadow: 0 24px 60px rgba(116, 68, 47, 0.14);
+        --radius-lg: 30px;
+        --radius-md: 18px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Inter", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(234, 122, 103, 0.2), transparent 30%),
+          radial-gradient(circle at top right, rgba(143, 184, 216, 0.26), transparent 26%),
+          linear-gradient(180deg, #fff8f2 0%, #fff3ee 48%, #fff9f3 100%);
+      }
+
+      body::before,
+      body::after {
+        content: "";
+        position: fixed;
+        inset: auto auto 10% -80px;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(242, 166, 111, 0.22), transparent 72%);
+        pointer-events: none;
+        filter: blur(10px);
+      }
+
+      body::after {
+        inset: 16% -60px auto auto;
+        background: radial-gradient(circle, rgba(142, 168, 140, 0.18), transparent 70%);
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .page-shell {
+        width: min(1120px, calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 28px 0 56px;
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(195, 146, 61, 0.18);
+        border-radius: 38px;
+        padding: 32px 24px 40px;
+        background:
+          linear-gradient(145deg, rgba(255, 250, 242, 0.92), rgba(255, 247, 239, 0.78)),
+          rgba(255, 255, 255, 0.7);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(14px);
+      }
+
+      .hero::before,
+      .hero::after {
+        content: "";
+        position: absolute;
+        border-radius: 999px;
+        opacity: 0.8;
+        pointer-events: none;
+      }
+
+      .hero::before {
+        top: -34px;
+        right: -18px;
+        width: 170px;
+        height: 170px;
+        background: radial-gradient(circle, rgba(242, 166, 111, 0.28), transparent 70%);
+      }
+
+      .hero::after {
+        left: -28px;
+        bottom: -56px;
+        width: 210px;
+        height: 210px;
+        background: radial-gradient(circle, rgba(143, 184, 216, 0.24), transparent 70%);
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        align-items: center;
+      }
+
+      .eyebrow {
+        margin: 0;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        color: var(--gold);
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 9vw, 5.3rem);
+        line-height: 0.92;
+      }
+
+      .hero-subtitle {
+        margin: 0;
+        max-width: 620px;
+        font-size: 1.02rem;
+        line-height: 1.75;
+        color: var(--muted);
+      }
+
+      .hero-facts {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 10px;
+      }
+
+      .fact-pill {
+        border: 1px solid rgba(195, 146, 61, 0.22);
+        border-radius: 999px;
+        padding: 11px 18px;
+        background: rgba(255, 255, 255, 0.65);
+        font-size: 0.92rem;
+        color: var(--ink);
+      }
+
+      .envelope-scene {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        justify-items: center;
+        gap: 22px;
+        margin-top: 34px;
+      }
+
+      .envelope-stage {
+        position: relative;
+        width: min(100%, 520px);
+        min-height: 360px;
+        display: grid;
+        place-items: end center;
+        perspective: 1400px;
+      }
+
+      .envelope-shadow {
+        position: absolute;
+        bottom: 26px;
+        width: 68%;
+        height: 26px;
+        border-radius: 50%;
+        background: rgba(115, 72, 48, 0.16);
+        filter: blur(12px);
+        transform: scale(1);
+        transition: transform 900ms ease, opacity 900ms ease;
+      }
+
+      .envelope {
+        position: relative;
+        width: min(92vw, 460px);
+        height: 290px;
+        transform-style: preserve-3d;
+      }
+
+      .letter-card {
+        position: absolute;
+        left: 50%;
+        bottom: 54px;
+        width: 82%;
+        min-height: 250px;
+        padding: 28px 24px 22px;
+        border-radius: 24px 24px 18px 18px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 248, 240, 0.98)),
+          white;
+        box-shadow: 0 20px 36px rgba(106, 67, 41, 0.12);
+        transform: translate(-50%, 26%) scale(0.96);
+        transform-origin: bottom center;
+        transition:
+          transform 1100ms cubic-bezier(0.2, 0.7, 0.18, 1),
+          box-shadow 1100ms ease;
+        border: 1px solid rgba(195, 146, 61, 0.12);
+        overflow: hidden;
+      }
+
+      .letter-card::before {
+        content: "";
+        position: absolute;
+        inset: 14px;
+        border: 1px solid rgba(195, 146, 61, 0.14);
+        border-radius: 18px;
+        pointer-events: none;
+      }
+
+      .letter-card p {
+        margin: 0;
+      }
+
+      .letter-topline {
+        display: inline-flex;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: rgba(234, 122, 103, 0.12);
+        font-size: 0.74rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--coral);
+      }
+
+      .letter-card h2 {
+        margin-top: 18px;
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 0.98;
+      }
+
+      .letter-preview {
+        margin-top: 14px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .letter-signoff {
+        margin-top: 18px;
+        color: var(--gold);
+        font-size: 0.95rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .envelope-back,
+      .envelope-front,
+      .envelope-flap {
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+      }
+
+      .envelope-back {
+        background:
+          linear-gradient(180deg, #f8e8d7 0%, #f0dbc4 100%);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+      }
+
+      .envelope-front {
+        overflow: hidden;
+        transform: translateZ(14px);
+      }
+
+      .envelope-front::before,
+      .envelope-front::after {
+        content: "";
+        position: absolute;
+        inset: auto 0 0 0;
+        border-style: solid;
+      }
+
+      .envelope-front::before {
+        border-width: 164px 230px 0 230px;
+        border-color: #f4dfca transparent transparent transparent;
+      }
+
+      .envelope-front::after {
+        width: 100%;
+        height: 100%;
+        inset: 0;
+        background:
+          linear-gradient(135deg, transparent 49.5%, #e8d0b8 50%),
+          linear-gradient(225deg, transparent 49.5%, #efd9c3 50%),
+          linear-gradient(315deg, transparent 49.5%, #f6e7d5 50%);
+        clip-path: polygon(0 0, 50% 54%, 100% 0, 100% 100%, 0 100%);
+      }
+
+      .envelope-flap {
+        transform-origin: top center;
+        transform: rotateX(0deg);
+        transition: transform 1100ms cubic-bezier(0.2, 0.8, 0.18, 1);
+        z-index: 5;
+        background: linear-gradient(180deg, #f9ebda 0%, #efd6bf 100%);
+        clip-path: polygon(0 0, 50% 70%, 100% 0);
+        box-shadow: inset 0 -1px 0 rgba(110, 68, 41, 0.08);
+      }
+
+      .seal {
+        position: absolute;
+        left: 50%;
+        top: 126px;
+        z-index: 6;
+        width: 78px;
+        height: 78px;
+        margin-left: -39px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background:
+          radial-gradient(circle at 30% 30%, #f3a193, #d86a5b 60%, #bd5148 100%);
+        box-shadow:
+          0 14px 24px rgba(168, 74, 61, 0.24),
+          inset 0 2px 4px rgba(255, 255, 255, 0.3);
+        color: white;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.7rem;
+        letter-spacing: 0.06em;
+        transition:
+          opacity 350ms ease,
+          transform 450ms ease;
+      }
+
+      .open-button {
+        border: none;
+        border-radius: 999px;
+        padding: 15px 26px;
+        font: inherit;
+        font-weight: 600;
+        color: white;
+        cursor: pointer;
+        background: linear-gradient(135deg, var(--coral), var(--sunset));
+        box-shadow: 0 16px 32px rgba(234, 122, 103, 0.28);
+        transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+      }
+
+      .open-button:hover,
+      .open-button:focus-visible {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 36px rgba(234, 122, 103, 0.34);
+      }
+
+      .open-button:focus-visible,
+      .secondary-link:focus-visible,
+      .map-link:focus-visible,
+      .submit-button:focus-visible {
+        outline: 3px solid rgba(143, 184, 216, 0.42);
+        outline-offset: 3px;
+      }
+
+      .scene-caption {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .secondary-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--gold);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .secondary-link::after {
+        content: "\2193";
+      }
+
+      .invitation-content {
+        opacity: 0;
+        transform: translateY(42px);
+        pointer-events: none;
+        transition: opacity 900ms ease, transform 900ms ease;
+        margin-top: 28px;
+      }
+
+      .invitation-content.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      .details-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 18px;
+      }
+
+      .card {
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--radius-lg);
+        padding: 28px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(12px);
+      }
+
+      .card h2 {
+        font-size: clamp(2.2rem, 4vw, 3.4rem);
+        line-height: 0.96;
+      }
+
+      .spotlight-card {
+        grid-column: span 7;
+        min-height: 320px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background:
+          radial-gradient(circle at top right, rgba(242, 166, 111, 0.14), transparent 30%),
+          linear-gradient(150deg, rgba(255, 255, 255, 0.96), rgba(255, 248, 240, 0.92));
+      }
+
+      .spotlight-card p {
+        margin: 0;
+        line-height: 1.72;
+        color: var(--muted);
+      }
+
+      .headline-stack {
+        display: grid;
+        gap: 12px;
+      }
+
+      .headline-stack .eyebrow {
+        color: var(--coral);
+      }
+
+      .spotlight-facts {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 22px;
+      }
+
+      .fact-box {
+        padding: 16px 18px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.65);
+        border: 1px solid rgba(195, 146, 61, 0.14);
+      }
+
+      .fact-label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+
+      .fact-value {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      .accent-card {
+        grid-column: span 5;
+        display: grid;
+        align-content: center;
+        gap: 16px;
+        background:
+          linear-gradient(180deg, rgba(255, 248, 240, 0.96), rgba(250, 244, 235, 0.9));
+      }
+
+      .accent-card h3 {
+        font-size: clamp(2rem, 3vw, 2.8rem);
+      }
+
+      .accent-card p,
+      .venue-card p,
+      .rsvp-copy p,
+      .confirmation-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.74;
+      }
+
+      .dress-code {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 16px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.74);
+        border: 1px solid rgba(195, 146, 61, 0.14);
+        width: fit-content;
+        max-width: 100%;
+        font-weight: 600;
+      }
+
+      .palette {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .swatch {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        box-shadow: inset 0 0 0 1px rgba(67, 49, 43, 0.08);
+      }
+
+      .venue-card,
+      .rsvp-card {
+        grid-column: span 6;
+      }
+
+      .venue-card h3,
+      .rsvp-card h3 {
+        font-size: clamp(1.9rem, 3vw, 2.6rem);
+        margin-bottom: 10px;
+      }
+
+      .venue-highlights {
+        display: grid;
+        gap: 14px;
+        margin-top: 20px;
+      }
+
+      .venue-badge {
+        display: inline-flex;
+        width: fit-content;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(143, 184, 216, 0.14);
+        color: #4b6980;
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .map-link {
+        display: inline-flex;
+        margin-top: 12px;
+        width: fit-content;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        color: var(--coral);
+      }
+
+      .map-link::after {
+        content: "\2197";
+      }
+
+      .rsvp-layout {
+        display: grid;
+        gap: 24px;
+      }
+
+      .rsvp-copy {
+        display: grid;
+        gap: 12px;
+      }
+
+      .rsvp-copy ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 10px;
+        color: var(--muted);
+      }
+
+      .rsvp-copy li {
+        display: flex;
+        gap: 10px;
+        align-items: start;
+      }
+
+      .rsvp-copy li::before {
+        content: "";
+        width: 9px;
+        height: 9px;
+        flex: 0 0 auto;
+        border-radius: 50%;
+        margin-top: 9px;
+        background: linear-gradient(135deg, var(--sunset), var(--coral));
+      }
+
+      form {
+        display: grid;
+        gap: 14px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      label {
+        display: grid;
+        gap: 8px;
+        font-size: 0.92rem;
+        font-weight: 600;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        border: 1px solid rgba(124, 94, 63, 0.18);
+        border-radius: 16px;
+        padding: 14px 15px;
+        background: rgba(255, 255, 255, 0.82);
+        font: inherit;
+        color: var(--ink);
+        transition: border-color 180ms ease, box-shadow 180ms ease;
+      }
+
+      textarea {
+        min-height: 112px;
+        resize: vertical;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: rgba(195, 146, 61, 0.48);
+        box-shadow: 0 0 0 4px rgba(195, 146, 61, 0.12);
+        outline: none;
+      }
+
+      .submit-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .submit-button {
+        border: none;
+        border-radius: 999px;
+        padding: 14px 24px;
+        font: inherit;
+        font-weight: 600;
+        color: white;
+        background: linear-gradient(135deg, var(--gold), #d4a95c);
+        cursor: pointer;
+        box-shadow: 0 16px 28px rgba(195, 146, 61, 0.22);
+      }
+
+      .form-status {
+        min-height: 1.3rem;
+        color: var(--coral);
+        font-size: 0.92rem;
+      }
+
+      .confirmation-card {
+        display: none;
+        margin-top: 6px;
+        padding: 18px;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(195, 146, 61, 0.14);
+      }
+
+      .confirmation-card.is-visible {
+        display: grid;
+        gap: 8px;
+      }
+
+      .confirmation-card h4 {
+        margin: 0;
+        font-size: 1.35rem;
+        font-family: "Cormorant Garamond", serif;
+      }
+
+      .footer-note {
+        margin: 26px 0 0;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+
+      .envelope.is-open .envelope-flap {
+        transform: rotateX(180deg);
+      }
+
+      .envelope.is-open .letter-card {
+        transform: translate(-50%, -36%) scale(1);
+        box-shadow: 0 28px 48px rgba(106, 67, 41, 0.18);
+      }
+
+      .envelope.is-open .seal {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.86);
+      }
+
+      .envelope.is-open + .envelope-shadow {
+        transform: scale(0.86);
+        opacity: 0.7;
+      }
+
+      @media (max-width: 920px) {
+        .spotlight-card,
+        .accent-card,
+        .venue-card,
+        .rsvp-card {
+          grid-column: 1 / -1;
+        }
+
+        .spotlight-facts,
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .page-shell {
+          width: min(100vw - 20px, 1120px);
+          padding-top: 12px;
+          padding-bottom: 32px;
+        }
+
+        .hero {
+          padding: 26px 18px 30px;
+          border-radius: 28px;
+        }
+
+        .card {
+          padding: 22px 18px;
+          border-radius: 24px;
+        }
+
+        .envelope-stage {
+          min-height: 320px;
+        }
+
+        .envelope {
+          width: min(100%, 370px);
+          height: 248px;
+        }
+
+        .letter-card {
+          min-height: 220px;
+          padding: 24px 18px 18px;
+        }
+
+        .envelope-front::before {
+          border-width: 142px 185px 0 185px;
+        }
+
+        .seal {
+          top: 103px;
+        }
+
+        .hero-facts {
+          gap: 10px;
+        }
+
+        .fact-pill {
+          width: 100%;
+          justify-content: center;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Wedding invitation</p>
+          <h1 id="page-title">Ani &amp; Zviadi</h1>
+          <p class="hero-subtitle">
+            A joyful summer celebration in Tbilisi. Open the envelope to reveal
+            the invitation and share your RSVP.
+          </p>
+          <div class="hero-facts" aria-label="Wedding details">
+            <div class="fact-pill">5 September</div>
+            <div class="fact-pill">17:00</div>
+            <div class="fact-pill">Garden of Ilia, Tbilisi</div>
+          </div>
+        </div>
+
+        <div class="envelope-scene">
+          <div class="envelope-stage">
+            <div class="envelope" id="envelope">
+              <div class="envelope-back"></div>
+              <article class="letter-card" aria-label="Invitation preview">
+                <span class="letter-topline">Open me</span>
+                <h2>You're invited</h2>
+                <p class="letter-preview">
+                  Join us on 5 September at 17:00 for the wedding of Ani and
+                  Zviadi at Garden of Ilia, Davit Aghmashenebeli Avenue, 73,
+                  Tbilisi.
+                </p>
+                <p class="letter-signoff">Summer chic</p>
+              </article>
+              <div class="envelope-front"></div>
+              <div class="envelope-flap" aria-hidden="true"></div>
+              <div class="seal" aria-hidden="true">AZ</div>
+            </div>
+            <div class="envelope-shadow" aria-hidden="true"></div>
+          </div>
+
+          <button
+            class="open-button"
+            id="openInvitation"
+            type="button"
+            aria-expanded="false"
+            aria-controls="invitationContent"
+          >
+            Open the invitation
+          </button>
+          <p class="scene-caption">
+            A bright, elegant, joyful summer spirit awaits inside.
+          </p>
+          <a class="secondary-link" href="#rsvp" id="jumpLink">Jump to RSVP</a>
+        </div>
+      </section>
+
+      <main class="invitation-content" id="invitationContent">
+        <section class="details-grid" aria-label="Invitation details">
+          <article class="card spotlight-card">
+            <div class="headline-stack">
+              <p class="eyebrow">The celebration</p>
+              <h2>Wedding of Ani and Zviadi</h2>
+              <p>
+                We would love to celebrate with you on a warm September
+                evening, surrounded by color, elegance, and the joyful energy
+                of summer.
+              </p>
+            </div>
+
+            <div class="spotlight-facts">
+              <div class="fact-box">
+                <span class="fact-label">Date</span>
+                <span class="fact-value">5 September</span>
+              </div>
+              <div class="fact-box">
+                <span class="fact-label">Time</span>
+                <span class="fact-value">17:00</span>
+              </div>
+              <div class="fact-box">
+                <span class="fact-label">Place</span>
+                <span class="fact-value">Garden of Ilia</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card accent-card">
+            <p class="eyebrow">Dress code</p>
+            <h3>Summer Chic</h3>
+            <div class="dress-code">
+              <div class="palette" aria-hidden="true">
+                <span class="swatch" style="background: #f3ad9b"></span>
+                <span class="swatch" style="background: #ffd26d"></span>
+                <span class="swatch" style="background: #8ea88c"></span>
+                <span class="swatch" style="background: #8fb8d8"></span>
+                <span class="swatch" style="background: #f5c6d0"></span>
+              </div>
+              <span>Bright colors, elegant details, joyful summer spirit</span>
+            </div>
+            <p>
+              Think polished silhouettes, light textures, and cheerful tones
+              that feel festive in the garden.
+            </p>
+          </article>
+
+          <article class="card venue-card">
+            <span class="venue-badge">Venue</span>
+            <h3>Garden of Ilia</h3>
+            <p>
+              Davit Aghmashenebeli Avenue, 73<br />
+              Tbilisi
+            </p>
+            <div class="venue-highlights">
+              <p>
+                An outdoor celebration setting for an elegant late-afternoon
+                wedding gathering.
+              </p>
+              <a
+                class="map-link"
+                href="https://www.google.com/maps/search/?api=1&query=Garden+of+Ilia%2C+Davit+Aghmashenebeli+Avenue+73%2C+Tbilisi"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open location in maps
+              </a>
+            </div>
+          </article>
+
+          <article class="card rsvp-card" id="rsvp">
+            <div class="rsvp-layout">
+              <div class="rsvp-copy">
+                <p class="eyebrow">RSVP</p>
+                <h3>Reply to the invitation</h3>
+                <p>
+                  Once the envelope is opened, your response becomes part of the
+                  keepsake. Share your name, whether you can attend, and any
+                  note you'd like to send.
+                </p>
+                <ul>
+                  <li>Choose your response in a few taps.</li>
+                  <li>Add how many guests are coming with you.</li>
+                  <li>Leave a message for Ani and Zviadi.</li>
+                </ul>
+              </div>
+
+              <form id="rsvpForm" novalidate>
+                <div class="form-grid">
+                  <label>
+                    Your name
+                    <input
+                      type="text"
+                      id="guestName"
+                      name="guestName"
+                      placeholder="Enter your name"
+                      required
+                    />
+                  </label>
+
+                  <label>
+                    Response
+                    <select id="attendance" name="attendance" required>
+                      <option value="">Select a response</option>
+                      <option value="joyfully attending">Joyfully attending</option>
+                      <option value="sending love from afar">
+                        Sending love from afar
+                      </option>
+                      <option value="still confirming">Still confirming</option>
+                    </select>
+                  </label>
+
+                  <label>
+                    Number of guests
+                    <input
+                      type="number"
+                      id="guestCount"
+                      name="guestCount"
+                      min="1"
+                      max="6"
+                      value="1"
+                    />
+                  </label>
+
+                  <label>
+                    Contact detail
+                    <input
+                      type="text"
+                      id="contactDetail"
+                      name="contactDetail"
+                      placeholder="Phone, email, or Instagram"
+                    />
+                  </label>
+                </div>
+
+                <label>
+                  Message for the couple
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="We can't wait to celebrate with you..."
+                  ></textarea>
+                </label>
+
+                <div class="submit-row">
+                  <button class="submit-button" type="submit">Save RSVP</button>
+                  <div class="form-status" id="formStatus" aria-live="polite"></div>
+                </div>
+
+                <aside class="confirmation-card" id="confirmationCard" aria-live="polite">
+                  <h4>RSVP saved</h4>
+                  <p id="confirmationSummary"></p>
+                </aside>
+              </form>
+            </div>
+          </article>
+        </section>
+
+        <p class="footer-note">
+          With love, in bright colors and warm September light.
+        </p>
+      </main>
+    </div>
+
+    <script>
+      const openButton = document.getElementById("openInvitation");
+      const invitationContent = document.getElementById("invitationContent");
+      const envelope = document.getElementById("envelope");
+      const jumpLink = document.getElementById("jumpLink");
+      const rsvpForm = document.getElementById("rsvpForm");
+      const guestNameInput = document.getElementById("guestName");
+      const attendanceInput = document.getElementById("attendance");
+      const guestCountInput = document.getElementById("guestCount");
+      const contactDetailInput = document.getElementById("contactDetail");
+      const messageInput = document.getElementById("message");
+      const formStatus = document.getElementById("formStatus");
+      const confirmationCard = document.getElementById("confirmationCard");
+      const confirmationSummary = document.getElementById("confirmationSummary");
+      const storageKey = "ani-zviadi-wedding-rsvp";
+
+      function revealInvitation({ smoothScroll = true } = {}) {
+        envelope.classList.add("is-open");
+        invitationContent.classList.add("is-visible");
+        openButton.setAttribute("aria-expanded", "true");
+        openButton.textContent = "Invitation opened";
+        openButton.disabled = true;
+        openButton.style.opacity = "0.82";
+        openButton.style.cursor = "default";
+
+        if (smoothScroll) {
+          window.setTimeout(() => {
+            invitationContent.scrollIntoView({ behavior: "smooth", block: "start" });
+          }, 420);
+        }
+      }
+
+      function updateGuestCountAvailability() {
+        const status = attendanceInput.value;
+        const disableGuestCount = status === "sending love from afar";
+        guestCountInput.disabled = disableGuestCount;
+        if (disableGuestCount) {
+          guestCountInput.value = "0";
+        } else if (Number(guestCountInput.value) < 1) {
+          guestCountInput.value = "1";
+        }
+      }
+
+      function setConfirmation(payload, sourceLabel) {
+        const guestLine =
+          payload.attendance === "sending love from afar"
+            ? "Not attending in person."
+            : `Guest count: ${payload.guestCount}.`;
+        const contactLine = payload.contactDetail
+          ? ` Contact: ${payload.contactDetail}.`
+          : "";
+        const messageLine = payload.message ? ` Message: "${payload.message}".` : "";
+
+        confirmationSummary.textContent =
+          `${payload.guestName} is ${payload.attendance}. ${guestLine}${contactLine}${messageLine} ${sourceLabel}`;
+        confirmationCard.classList.add("is-visible");
+      }
+
+      function loadSavedRsvp() {
+        const raw = window.localStorage.getItem(storageKey);
+
+        if (!raw) {
+          return;
+        }
+
+        try {
+          const payload = JSON.parse(raw);
+          guestNameInput.value = payload.guestName || "";
+          attendanceInput.value = payload.attendance || "";
+          guestCountInput.value = payload.guestCount || "1";
+          contactDetailInput.value = payload.contactDetail || "";
+          messageInput.value = payload.message || "";
+          updateGuestCountAvailability();
+          setConfirmation(payload, "Saved on this device.");
+          formStatus.textContent = "Loaded your previously saved RSVP.";
+        } catch (error) {
+          window.localStorage.removeItem(storageKey);
+        }
+      }
+
+      openButton.addEventListener("click", () => revealInvitation());
+      jumpLink.addEventListener("click", () => revealInvitation({ smoothScroll: false }));
+      attendanceInput.addEventListener("change", updateGuestCountAvailability);
+
+      rsvpForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        formStatus.textContent = "";
+
+        const payload = {
+          guestName: guestNameInput.value.trim(),
+          attendance: attendanceInput.value,
+          guestCount: guestCountInput.disabled ? "0" : guestCountInput.value,
+          contactDetail: contactDetailInput.value.trim(),
+          message: messageInput.value.trim()
+        };
+
+        if (!payload.guestName) {
+          formStatus.textContent = "Please enter your name before saving your RSVP.";
+          guestNameInput.focus();
+          return;
+        }
+
+        if (!payload.attendance) {
+          formStatus.textContent = "Please select your RSVP response.";
+          attendanceInput.focus();
+          return;
+        }
+
+        if (
+          payload.attendance !== "sending love from afar" &&
+          (!payload.guestCount || Number(payload.guestCount) < 1)
+        ) {
+          formStatus.textContent = "Please enter a valid guest count.";
+          guestCountInput.focus();
+          return;
+        }
+
+        window.localStorage.setItem(storageKey, JSON.stringify(payload));
+        formStatus.textContent = "Your RSVP has been saved in this browser.";
+        setConfirmation(payload, "Saved on this device.");
+      });
+
+      loadSavedRsvp();
+      updateGuestCountAvailability();
+    </script>
+  </body>
+</html>
