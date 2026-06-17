@@ -2,120 +2,125 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#e26d5a" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#1f4a3c" />
   <title>Ani &amp; Zviadi — Wedding Invitation</title>
-  <meta name="description" content="You are warmly invited to the wedding of Ani & Zviadi — 5 September, 17:00, Garden of Ilia, Tbilisi." />
+  <meta name="description" content="The wedding of Ani & Zviadi — 5 September, 17:00, Garden of Ilia, Tbilisi. Slide the card to open your invitation." />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Wedding of Ani & Zviadi" />
-  <meta property="og:description" content="5 September · 17:00 · Garden of Ilia, Tbilisi. Tap to open your invitation." />
+  <meta property="og:description" content="5 September · 17:00 · Garden of Ilia, Tbilisi. Slide the card to open your invitation." />
   <meta property="og:type" content="website" />
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@500;600;700&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Pinyon+Script&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Floating petals -->
-  <div class="petals" aria-hidden="true"></div>
+  <div class="dust" aria-hidden="true"></div>
 
-  <!-- ============ ENVELOPE / OPENING SCREEN ============ -->
+  <!-- ============ COVER · ENVELOPE WITH SLIDING CARD ============ -->
   <main id="cover" class="cover" aria-label="Wedding invitation envelope">
     <div class="cover__inner">
       <p class="cover__pretitle">Together with their families</p>
 
-      <div class="envelope" id="envelope" role="button" tabindex="0"
-           aria-label="Open the wedding invitation">
-        <div class="envelope__lining"></div>
+      <div class="scene">
+        <div class="envelope" id="envelope" role="button" tabindex="0"
+             aria-label="Open the wedding invitation — slide the card or press Enter">
 
-        <!-- The letter that slides up out of the envelope -->
-        <div class="letter" id="letter">
-          <div class="letter__decor letter__decor--top">
-            <img src="assets/floral-spray.svg" alt="" />
+          <!-- Cream card that slides out to the right -->
+          <div class="slip" id="slip">
+            <div class="slip__face">
+              <div class="crest crest--sm" aria-hidden="true"><span>A<i>&amp;</i>Z</span></div>
+              <p class="slip__title">The Wedding Of</p>
+              <p class="slip__names">Ani &amp; Zviadi</p>
+              <p class="slip__date">5 · 09 · 2026</p>
+            </div>
+            <div class="slip__pull" aria-hidden="true">
+              <span class="slip__pull-text">slide</span>
+              <span class="slip__pull-arrow">&rsaquo;&rsaquo;</span>
+            </div>
           </div>
-          <p class="letter__eyebrow">You're Invited</p>
-          <h1 class="letter__names">Ani <span>&amp;</span> Zviadi</h1>
-          <p class="letter__sub">are getting married</p>
-          <p class="letter__date">05 · 09 · 2026</p>
-          <div class="letter__decor letter__decor--bottom">
-            <img src="assets/floral-spray.svg" alt="" />
+
+          <!-- Forest-green front panel -->
+          <div class="pocket">
+            <div class="pocket__edge" aria-hidden="true"></div>
+
+            <div class="medallion medallion--a">
+              <span class="medallion__letter">A</span>
+            </div>
+            <div class="medallion medallion--z">
+              <span class="medallion__letter">Z</span>
+            </div>
+
+            <p class="phrase phrase--a">A gardener of gentle kindness.</p>
+            <p class="phrase phrase--z">A voyager to realms of freedom.</p>
+
+            <img src="assets/paw.svg" alt="" class="motif motif--paw" />
+            <img src="assets/flourish.svg" alt="" class="motif motif--flourish" />
           </div>
         </div>
-
-        <!-- Envelope body -->
-        <div class="envelope__back"></div>
-        <div class="envelope__pocket"></div>
-        <div class="envelope__flap" id="flap"></div>
-
-        <!-- Wax seal -->
-        <button class="seal" id="seal" aria-label="Open invitation">
-          <span class="seal__monogram">A<small>&amp;</small>Z</span>
-        </button>
       </div>
 
       <p class="cover__hint" id="coverHint">
-        <span class="cover__hint-tap">Tap the seal to open</span>
+        Slide the card&nbsp;&rsaquo;&rsaquo;&nbsp; or press Enter
       </p>
     </div>
   </main>
 
-  <!-- ============ INVITATION CARD ============ -->
+  <!-- ============ INVITATION ============ -->
   <section id="invitation" class="invitation" aria-hidden="true">
     <article class="card">
-      <div class="card__corner card__corner--tl"><img src="assets/corner-floral.svg" alt="" /></div>
-      <div class="card__corner card__corner--tr"><img src="assets/corner-floral.svg" alt="" /></div>
-      <div class="card__corner card__corner--bl"><img src="assets/corner-floral.svg" alt="" /></div>
-      <div class="card__corner card__corner--br"><img src="assets/corner-floral.svg" alt="" /></div>
+      <span class="card__corner card__corner--tl"><img src="assets/corner-flourish.svg" alt="" /></span>
+      <span class="card__corner card__corner--tr"><img src="assets/corner-flourish.svg" alt="" /></span>
+      <span class="card__corner card__corner--bl"><img src="assets/corner-flourish.svg" alt="" /></span>
+      <span class="card__corner card__corner--br"><img src="assets/corner-flourish.svg" alt="" /></span>
 
       <header class="card__header reveal">
+        <div class="crest" aria-hidden="true"><span>A<i>&amp;</i>Z</span></div>
         <p class="card__eyebrow">The Wedding Of</p>
-        <h2 class="card__names">Ani <span>&amp;</span> Zviadi</h2>
-        <div class="card__rule"><span></span><img src="assets/leaf.svg" alt="" /><span></span></div>
+        <h1 class="card__names">Ani <span>&amp;</span> Zviadi</h1>
+        <img src="assets/divider.svg" alt="" class="card__divider" />
         <p class="card__invite-line">
-          Together with their families, request the pleasure of your company
+          Together with their families, request the honour of your presence
           as they celebrate their marriage.
         </p>
       </header>
 
       <div class="card__details reveal">
         <div class="detail">
-          <span class="detail__icon" aria-hidden="true">🗓️</span>
-          <p class="detail__label">When</p>
-          <p class="detail__value">Saturday, 5&nbsp;September&nbsp;2026</p>
+          <span class="detail__icon"><img src="assets/icon-calendar.svg" alt="" /></span>
+          <p class="detail__label">The Day</p>
+          <p class="detail__value">Saturday, 5 September 2026</p>
           <p class="detail__value detail__value--accent">17:00</p>
         </div>
 
-        <div class="detail">
-          <span class="detail__icon" aria-hidden="true">📍</span>
-          <p class="detail__label">Where</p>
+        <div class="detail detail--mid">
+          <span class="detail__icon"><img src="assets/icon-location.svg" alt="" /></span>
+          <p class="detail__label">The Place</p>
           <p class="detail__value">Garden of Ilia</p>
-          <p class="detail__value">Davit Aghmashenebeli Avenue&nbsp;73</p>
-          <p class="detail__value">Tbilisi, Georgia</p>
+          <p class="detail__value detail__value--small">Davit Aghmashenebeli Avenue 73</p>
+          <p class="detail__value detail__value--small">Tbilisi, Georgia</p>
         </div>
 
         <div class="detail">
-          <span class="detail__icon" aria-hidden="true">👗</span>
+          <span class="detail__icon"><img src="assets/icon-dress.svg" alt="" /></span>
           <p class="detail__label">Dress Code</p>
           <p class="detail__value detail__value--accent">Summer Chic</p>
-          <p class="detail__value detail__value--small">Bright colors · elegant ·
-            a joyful summer spirit</p>
+          <p class="detail__value detail__value--small">Bright colours, elegant, a joyful summer spirit</p>
         </div>
       </div>
 
-      <!-- Dress code palette -->
-      <div class="palette reveal" aria-label="Summer chic color palette">
-        <span class="swatch" style="--c:#e26d5a"></span>
-        <span class="swatch" style="--c:#f3a683"></span>
-        <span class="swatch" style="--c:#f6c453"></span>
-        <span class="swatch" style="--c:#88b04b"></span>
-        <span class="swatch" style="--c:#6cb2c4"></span>
-        <span class="swatch" style="--c:#d98ca7"></span>
+      <div class="palette reveal" aria-label="Summer chic colour palette">
+        <span class="swatch" style="--c:#e0795f"></span>
+        <span class="swatch" style="--c:#e6b85c"></span>
+        <span class="swatch" style="--c:#cfae6b"></span>
+        <span class="swatch" style="--c:#7fa05b"></span>
+        <span class="swatch" style="--c:#6ca2ac"></span>
+        <span class="swatch" style="--c:#c98aa0"></span>
       </div>
 
       <div class="card__actions reveal">
@@ -132,9 +137,9 @@
     <!-- ============ RSVP ============ -->
     <article class="rsvp" id="rsvp">
       <div class="rsvp__head reveal">
-        <img src="assets/leaf.svg" alt="" class="rsvp__leaf" />
-        <h2>Will you join us?</h2>
-        <p>Kindly reply by <strong>1&nbsp;August&nbsp;2026</strong></p>
+        <img src="assets/flourish.svg" alt="" class="rsvp__leaf" />
+        <h2>Kindly Reply</h2>
+        <p>We would be honoured by your response by <strong>1 August 2026</strong></p>
       </div>
 
       <form class="rsvp__form reveal" id="rsvpForm" novalidate>
@@ -152,7 +157,7 @@
           <legend>Will you attend?</legend>
           <label class="choice">
             <input type="radio" name="attending" value="Joyfully accepts" required />
-            <span>Joyfully accepts 🎉</span>
+            <span>Joyfully accepts</span>
           </label>
           <label class="choice">
             <input type="radio" name="attending" value="Regretfully declines" />
@@ -175,8 +180,8 @@
       </form>
 
       <div class="rsvp__thankyou" id="thankYou" hidden>
-        <div class="thankyou__seal"><span>A<small>&amp;</small>Z</span></div>
-        <h3 id="thankYouTitle">Thank you!</h3>
+        <div class="crest"><span>A<i>&amp;</i>Z</span></div>
+        <h3 id="thankYouTitle">Thank you</h3>
         <p id="thankYouMsg"></p>
         <button type="button" class="btn btn--ghost" id="editRsvp">Edit my response</button>
       </div>
@@ -185,7 +190,6 @@
     <footer class="footer">
       <p class="footer__names">Ani &amp; Zviadi</p>
       <p class="footer__sub">5 September 2026 · Tbilisi</p>
-      <p class="footer__heart" aria-hidden="true">♥</p>
     </footer>
   </section>
 

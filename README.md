@@ -1,27 +1,29 @@
 # Ani &amp; Zviadi — Wedding Invitation
 
-A romantic, interactive online wedding invitation with a **summer-chic** theme.
-Guests are greeted by a sealed envelope; tapping the wax seal opens the flap, lifts
-the letter, and reveals the full invitation and **RSVP** form.
+An elegant, interactive online wedding invitation in a mature **emerald &amp; gold**
+palette. Guests meet a deep forest-green envelope with gold **A** and **Z**
+medallions and a cream card peeking out. They **slide the card out** (drag it, or
+press <kbd>Enter</kbd> / <kbd>Space</kbd>) to reveal the full invitation and **RSVP**.
 
 > **Date:** Saturday, 5 September 2026 · 17:00
 > **Venue:** Garden of Ilia, Davit Aghmashenebeli Avenue 73, Tbilisi, Georgia
-> **Dress code:** Summer Chic — bright colors, elegant, joyful summer spirit
+> **Dress code:** Summer Chic — bright colours, elegant, joyful summer spirit
 
 ## Features
 
-- ✉️ **Animated envelope** that opens on tap/click (keyboard accessible).
-- 💌 Elegant invitation card with all the wedding details.
-- 🎨 Visual **dress-code palette** so guests know the "summer chic" vibe.
-- 📝 **RSVP form** with attendance, guest count, and a note to the couple.
-- 🗓️ **Add to Calendar** (downloads an `.ics` file) and **View Map** buttons.
-- ⏳ Live **countdown** to the big day.
-- 🌸 Floating petals, florals, and responsive design (looks great on phones).
-- ♿ Respects `prefers-reduced-motion`.
+- ✉️ **Forest-green envelope** with gold initial medallions, short love phrases,
+  and subtle paw &amp; flourish motifs (matching the reference card).
+- 🎴 **Slide-to-open** cream card — drag it out manually (mouse/touch) or press
+  <kbd>Enter</kbd> / <kbd>Space</kbd>; it snaps back if you don't pull far enough.
+- 💌 Luxurious invitation card with a gold monogram crest, calligraphy names, a
+  gold ornamental divider, and elegant detail columns with gold line icons.
+- 📝 **RSVP form** (attendance, guest count, note) on a rich green panel.
+- 🗓️ **Add to Calendar** (`.ics`) and **View Map** buttons; live **countdown**.
+- ✨ Subtle floating gold dust, fully responsive, and `prefers-reduced-motion` aware.
 
 ## Run it locally
 
-It's a plain static site — no build step. Just open `index.html`, or serve it:
+It's a plain static site — no build step. Open `index.html`, or serve it:
 
 ```bash
 python3 -m http.server 8000
@@ -41,25 +43,21 @@ automatically instead:
    var FORMSPREE_ENDPOINT = "https://formspree.io/f/abcdwxyz";
    var COUPLE_EMAIL = "you@example.com"; // used for the email fallback
    ```
-3. Replies will be delivered to the email tied to your Formspree form.
 
 ## Customizing
 
-All content lives in `index.html`; colors and fonts are CSS variables at the top of
-`styles.css`. Key things you may want to change:
+All content lives in `index.html`; colours and fonts are CSS variables at the top of
+`styles.css`.
 
 | What | Where |
 | --- | --- |
 | Names, date, venue, dress code | `index.html` |
+| Initials in the medallions (`A` / `Z`) | `.medallion__letter` in `index.html` |
+| Love phrases on the envelope | `.phrase--a` / `.phrase--z` in `index.html` |
 | Wedding date/time (countdown, calendar) | `WEDDING_DATE` in `script.js` |
-| Color palette / fonts | `:root` in `styles.css` |
-| Monogram on the wax seal | `.seal__monogram` text in `index.html` |
-| Floral / decorative art | `assets/*.svg` |
-
-> **Style references:** the task mentioned style references, but no images came
-> through. The current design follows the "summer chic" brief (coral, peach, sunny
-> gold, garden green, sky blue, blush) with a garden-floral motif. Share any
-> reference images and the palette/decor can be matched precisely.
+| Colour palette / fonts | `:root` in `styles.css` |
+| How far the card slides / open threshold | `recalc()` in `script.js` |
+| Decorative art (icons, flourishes, paw) | `assets/*.svg` |
 
 ## Deploy
 
@@ -71,8 +69,8 @@ Upload the folder to any static host:
 ## Files
 
 ```
-index.html      # markup: envelope, invitation, RSVP
-styles.css      # summer-chic theme + envelope animation
-script.js       # opening interaction, RSVP, countdown, calendar
-assets/         # SVG florals, leaf, favicon
+index.html      # cover envelope, slide-out card, invitation, RSVP
+styles.css      # emerald & gold theme + slide mechanics
+script.js       # slide/drag interaction, RSVP, countdown, calendar
+assets/         # gold SVG icons, flourishes, paw, favicon
 ```
