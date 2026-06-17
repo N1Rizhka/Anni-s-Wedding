@@ -1,5 +1,6 @@
 const invitationStage = document.querySelector(".invitation-stage");
 const openEnvelopeButton = document.querySelector("[data-open-envelope]");
+const weddingCard = document.querySelector("#wedding-card");
 const rsvpForm = document.querySelector("[data-rsvp-form]");
 const confirmation = document.querySelector("[data-rsvp-confirmation]");
 const confirmationName = document.querySelector("[data-confirmation-name]");
@@ -11,12 +12,14 @@ const RSVP_STORAGE_KEY = "ani-zviadi-rsvp";
 function openInvitation() {
   invitationStage.classList.add("is-open");
   openEnvelopeButton.setAttribute("aria-expanded", "true");
+  weddingCard.setAttribute("aria-hidden", "false");
 
   window.setTimeout(() => {
-    document.querySelector("#wedding-card").scrollIntoView({
+    weddingCard.scrollIntoView({
       behavior: "smooth",
       block: "center",
     });
+    weddingCard.focus({ preventScroll: true });
   }, 650);
 }
 
