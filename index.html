@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Wedding invitation for Ani & Zviadi — 5 September, Garden of Ilia, Tbilisi" />
+    <title>Ani & Zviadi — Wedding Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Josefin+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div class="ambient">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <main id="app">
+      <!-- Envelope Stage -->
+      <section id="envelope-stage" class="stage active" aria-label="Wedding invitation envelope">
+        <p class="hint">Tap the envelope to open</p>
+
+        <div class="envelope-wrapper" id="envelope" role="button" tabindex="0" aria-label="Open wedding invitation">
+          <div class="envelope-shadow"></div>
+
+          <div class="envelope-back"></div>
+
+          <div class="letter-preview">
+            <div class="letter-peek">
+              <span class="peek-monogram">A &amp; Z</span>
+            </div>
+          </div>
+
+          <div class="envelope-front">
+            <div class="envelope-fold-left"></div>
+            <div class="envelope-fold-right"></div>
+            <div class="envelope-fold-bottom"></div>
+          </div>
+
+          <div class="envelope-flap">
+            <div class="wax-seal">
+              <span>A&amp;Z</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="couple-hint">Ani &amp; Zviadi</p>
+      </section>
+
+      <!-- Invitation Stage -->
+      <section id="invitation-stage" class="stage" aria-label="Wedding invitation details" hidden>
+        <article class="invitation-card">
+          <header class="card-header">
+            <p class="eyebrow">Together with their families</p>
+            <h1 class="couple-names">
+              <span class="name">Ani</span>
+              <span class="ampersand">&amp;</span>
+              <span class="name">Zviadi</span>
+            </h1>
+            <p class="subtitle">request the pleasure of your company<br />at their wedding celebration</p>
+          </header>
+
+          <div class="divider floral-divider" aria-hidden="true">
+            <span>✿</span>
+          </div>
+
+          <div class="card-details">
+            <div class="detail-block">
+              <p class="detail-label">Date</p>
+              <p class="detail-value">Friday, 5 September</p>
+            </div>
+            <div class="detail-block">
+              <p class="detail-label">Time</p>
+              <p class="detail-value">17:00</p>
+            </div>
+            <div class="detail-block">
+              <p class="detail-label">Venue</p>
+              <p class="detail-value">Garden of Ilia</p>
+              <p class="detail-sub">Davit Aghmashenebeli Avenue, 73</p>
+              <p class="detail-sub">Tbilisi, Georgia</p>
+            </div>
+          </div>
+
+          <div class="dress-code">
+            <p class="dress-code-label">Dress Code</p>
+            <p class="dress-code-value">Summer Chic</p>
+            <p class="dress-code-note">Bright colors · Elegant · Joyful summer spirit</p>
+            <div class="color-swatches" aria-hidden="true">
+              <span style="--swatch: #ff6b6b"></span>
+              <span style="--swatch: #ffd93d"></span>
+              <span style="--swatch: #6bcb77"></span>
+              <span style="--swatch: #4d96ff"></span>
+              <span style="--swatch: #c77dff"></span>
+            </div>
+          </div>
+
+          <button type="button" class="btn-rsvp" id="btn-open-rsvp">
+            RSVP
+          </button>
+
+          <a
+            class="map-link"
+            href="https://maps.google.com/?q=Garden+of+Ilia+Davit+Aghmashenebeli+Avenue+73+Tbilisi"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View on map →
+          </a>
+        </article>
+      </section>
+
+      <!-- RSVP Stage -->
+      <section id="rsvp-stage" class="stage" aria-label="RSVP form" hidden>
+        <article class="rsvp-card">
+          <button type="button" class="btn-back" id="btn-back" aria-label="Back to invitation">
+            ← Back
+          </button>
+
+          <header class="rsvp-header">
+            <h2>RSVP</h2>
+            <p>We would be delighted to celebrate with you</p>
+          </header>
+
+          <form id="rsvp-form" novalidate>
+            <div class="form-group">
+              <label for="guest-name">Full Name <span aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="guest-name"
+                name="name"
+                required
+                autocomplete="name"
+                placeholder="Your name"
+              />
+              <span class="field-error" id="error-name"></span>
+            </div>
+
+            <fieldset class="form-group">
+              <legend>Will you attend? <span aria-hidden="true">*</span></legend>
+              <div class="radio-group">
+                <label class="radio-card">
+                  <input type="radio" name="attending" value="yes" required />
+                  <span class="radio-label">
+                    <strong>Joyfully accepts</strong>
+                    <small>Can't wait to celebrate!</small>
+                  </span>
+                </label>
+                <label class="radio-card">
+                  <input type="radio" name="attending" value="no" />
+                  <span class="radio-label">
+                    <strong>Regretfully declines</strong>
+                    <small>Sending love from afar</small>
+                  </span>
+                </label>
+              </div>
+              <span class="field-error" id="error-attending"></span>
+            </fieldset>
+
+            <div class="form-group" id="guest-count-group">
+              <label for="guest-count">Number of guests (including you)</label>
+              <select id="guest-count" name="guestCount">
+                <option value="1">1 guest</option>
+                <option value="2">2 guests</option>
+                <option value="3">3 guests</option>
+                <option value="4">4 guests</option>
+              </select>
+            </div>
+
+            <div class="form-group" id="dietary-group">
+              <label for="dietary">Dietary requirements</label>
+              <input
+                type="text"
+                id="dietary"
+                name="dietary"
+                placeholder="Vegetarian, allergies, etc."
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message for the couple</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="3"
+                placeholder="Share your wishes..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit" id="btn-submit">
+              Send RSVP
+            </button>
+          </form>
+
+          <div id="rsvp-success" class="rsvp-success" hidden>
+            <div class="success-icon" aria-hidden="true">✿</div>
+            <h3>Thank you!</h3>
+            <p id="success-message">Your RSVP has been received.</p>
+            <button type="button" class="btn-back" id="btn-back-success">← Back to invitation</button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
