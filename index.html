@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ani & Zviadi | Wedding Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero" aria-label="Wedding invitation envelope">
+        <div class="spark spark-1"></div>
+        <div class="spark spark-2"></div>
+        <div class="spark spark-3"></div>
+        <div class="spark spark-4"></div>
+
+        <button id="openInvitation" class="envelope-wrap" aria-expanded="false">
+          <div class="envelope" id="envelope">
+            <div class="envelope-flap"></div>
+            <div class="envelope-letter">
+              <h1 class="letter-title">Ani &amp; Zviadi</h1>
+              <p class="letter-subtitle">Wedding Invitation</p>
+            </div>
+            <div class="envelope-body"></div>
+          </div>
+          <span class="envelope-hint">Tap to open</span>
+        </button>
+      </section>
+
+      <section id="invitationContent" class="invitation hidden" aria-hidden="true">
+        <article class="card">
+          <p class="eyebrow">With joy in our hearts</p>
+          <h2 class="names">Ani &amp; Zviadi</h2>
+          <p class="invite-line">invite you to celebrate our wedding day</p>
+
+          <div class="details-grid">
+            <div class="detail-item">
+              <h3>Date</h3>
+              <p>5 September</p>
+            </div>
+            <div class="detail-item">
+              <h3>Time</h3>
+              <p>17:00</p>
+            </div>
+            <div class="detail-item detail-item-wide">
+              <h3>Venue</h3>
+              <p>Garden of Ilia</p>
+              <p>Davit Aghmashenebeli Avenue, 73</p>
+              <p>Tbilisi</p>
+            </div>
+            <div class="detail-item detail-item-wide">
+              <h3>Dresscode</h3>
+              <p><strong>SUMMER CHIC</strong></p>
+              <p>bright colors, elegant, joyful summer spirit</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rsvp-card">
+          <h2>RSVP</h2>
+          <p class="rsvp-note">Please let us know if you can join us.</p>
+
+          <form id="rsvpForm" class="rsvp-form">
+            <label>
+              Full name
+              <input type="text" name="name" required placeholder="Your name" />
+            </label>
+
+            <label>
+              Will you attend?
+              <select name="attendance" required>
+                <option value="" disabled selected>Select one option</option>
+                <option value="yes">Yes, happily attending</option>
+                <option value="no">Sorry, cannot attend</option>
+              </select>
+            </label>
+
+            <label>
+              Number of guests
+              <input
+                type="number"
+                name="guests"
+                min="1"
+                max="6"
+                value="1"
+                required
+              />
+            </label>
+
+            <label>
+              Message for the couple (optional)
+              <textarea
+                name="message"
+                rows="3"
+                placeholder="Share your warm wishes"
+              ></textarea>
+            </label>
+
+            <button type="submit" class="submit-btn">Send RSVP</button>
+          </form>
+
+          <p id="rsvpSuccess" class="rsvp-success hidden" role="status">
+            Thank you! Your RSVP has been received.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
