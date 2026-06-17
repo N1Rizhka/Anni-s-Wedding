@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ani &amp; Zviadi | Wedding Invitation</title>
+    <meta
+      name="description"
+      content="An online wedding invitation for Ani and Zviadi with an interactive envelope reveal and RSVP experience."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+      <div class="ambient ambient-three"></div>
+
+      <header class="topbar">
+        <p>5 September 2026 &middot; 17:00 &middot; Garden of Ilia, Tbilisi</p>
+        <a href="#rsvp-panel">RSVP</a>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Wedding invitation</p>
+            <h1>Ani <span>&amp;</span> Zviadi</h1>
+            <p class="lead">
+              A bright, elegant summer celebration wrapped inside a digital envelope.
+              Open it to discover the invitation, the details, and your RSVP card.
+            </p>
+            <div class="hero-actions">
+              <button class="primary-button" id="openEnvelope" type="button">
+                Open the invitation
+              </button>
+              <a class="secondary-link" href="#details">Explore the details</a>
+            </div>
+          </div>
+
+          <div class="envelope-stage">
+            <button
+              class="envelope"
+              id="envelope"
+              type="button"
+              aria-expanded="false"
+              aria-controls="brochure"
+            >
+              <span class="envelope-back"></span>
+              <span class="envelope-letter">
+                <span class="seal">A &middot; Z</span>
+                <span class="letter-content">
+                  <small>Summer chic celebration</small>
+                  <strong>5 September</strong>
+                  <span>Garden of Ilia &middot; Tbilisi</span>
+                </span>
+              </span>
+              <span class="envelope-flap"></span>
+              <span class="envelope-front"></span>
+            </button>
+            <p class="gesture-hint">Tap the envelope to open your invitation</p>
+          </div>
+        </section>
+
+        <section class="brochure" id="brochure">
+          <div class="brochure-card">
+            <div class="brochure-intro" id="details">
+              <p class="eyebrow">You are invited</p>
+              <h2>Celebrate the wedding of Ani and Zviadi</h2>
+              <p>
+                Join us for an evening filled with joyful summer spirit, bright colors,
+                heartfelt toasts, and dancing under the garden sky.
+              </p>
+            </div>
+
+            <div class="detail-grid">
+              <article class="detail-card">
+                <p class="detail-label">Date</p>
+                <h3>5 September 2026</h3>
+                <p>Saturday</p>
+              </article>
+              <article class="detail-card">
+                <p class="detail-label">Time</p>
+                <h3>17:00</h3>
+                <p>Arrival &amp; welcome drinks</p>
+              </article>
+              <article class="detail-card">
+                <p class="detail-label">Venue</p>
+                <h3>Garden of Ilia</h3>
+                <p>Davit Aghmashenebeli Avenue, 73, Tbilisi</p>
+              </article>
+              <article class="detail-card">
+                <p class="detail-label">Dress code</p>
+                <h3>Summer Chic</h3>
+                <p>Bright colors, elegant silhouettes, joyful summer spirit</p>
+              </article>
+            </div>
+
+            <div class="celebration-panel">
+              <div>
+                <p class="detail-label">A note from the couple</p>
+                <h3>Bring your brightest mood</h3>
+                <p>
+                  Think warm light, polished details, and a festive atmosphere that feels
+                  playful, elegant, and full of life.
+                </p>
+              </div>
+
+              <div class="action-cluster">
+                <a
+                  class="soft-button"
+                  href="https://maps.google.com/?q=Garden%20of%20Ilia%20Davit%20Aghmashenebeli%20Avenue%2073%20Tbilisi"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Open map
+                </a>
+                <button class="soft-button" id="addCalendar" type="button">
+                  Add to calendar
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="rsvp-panel" id="rsvp-panel">
+          <div class="rsvp-copy">
+            <p class="eyebrow">RSVP</p>
+            <h2>Reply to the invitation</h2>
+            <p>
+              Let Ani and Zviadi know whether you can celebrate with them. Your response
+              is saved on this device and can be copied or shared in one tap.
+            </p>
+          </div>
+
+          <div class="rsvp-card">
+            <form id="rsvpForm" class="rsvp-form">
+              <label>
+                Full name
+                <input
+                  type="text"
+                  id="guestName"
+                  name="guestName"
+                  placeholder="Your name"
+                  required
+                />
+              </label>
+
+              <label>
+                Email or phone
+                <input
+                  type="text"
+                  id="guestContact"
+                  name="guestContact"
+                  placeholder="Optional contact detail"
+                />
+              </label>
+
+              <fieldset>
+                <legend>Will you attend?</legend>
+                <div class="choice-row">
+                  <label class="choice-pill">
+                    <input type="radio" name="attendance" value="Joyfully attending" checked />
+                    <span>Joyfully attending</span>
+                  </label>
+                  <label class="choice-pill">
+                    <input type="radio" name="attendance" value="Sadly declining" />
+                    <span>Sadly declining</span>
+                  </label>
+                  <label class="choice-pill">
+                    <input type="radio" name="attendance" value="Maybe" />
+                    <span>Maybe</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <label>
+                Number of guests
+                <select id="guestCount" name="guestCount">
+                  <option value="1">1 guest</option>
+                  <option value="2">2 guests</option>
+                  <option value="3">3 guests</option>
+                  <option value="4">4 guests</option>
+                </select>
+              </label>
+
+              <label>
+                Message for the couple
+                <textarea
+                  id="guestMessage"
+                  name="guestMessage"
+                  rows="4"
+                  placeholder="A note, dietary preference, or song request"
+                ></textarea>
+              </label>
+
+              <button class="primary-button submit-button" type="submit">
+                Save my RSVP
+              </button>
+            </form>
+
+            <div class="rsvp-result" id="rsvpResult" hidden>
+              <p class="detail-label">Your RSVP card</p>
+              <h3>Saved and ready to share</h3>
+              <pre id="rsvpSummary"></pre>
+              <div class="action-cluster">
+                <button class="soft-button" id="copyRsvp" type="button">Copy RSVP</button>
+                <button class="soft-button" id="shareRsvp" type="button">Share RSVP</button>
+                <button class="soft-button" id="resetRsvp" type="button">Edit RSVP</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
