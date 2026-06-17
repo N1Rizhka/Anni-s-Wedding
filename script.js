@@ -11,7 +11,7 @@
      If left empty, the form falls back to opening the guest's email client.
   ------------------------------------------------------------------ */
   var FORMSPREE_ENDPOINT = "";
-  var COUPLE_EMAIL = "ani.and.zviadi@example.com"; // used for the mailto fallback
+  var COUPLE_EMAIL = "ninirizhamadze22@example.com"; // used for the mailto fallback
   var WEDDING_DATE = new Date("2026-09-05T17:00:00+04:00"); // Tbilisi time (GMT+4)
 
   /* ---------- helpers ---------- */
